@@ -20,9 +20,32 @@ public class IsPrime {
             return false;
         }
     }
+    public static long sumatoria(long n) {
+        if(isPrime(n)){
+            int i = 0; 
+            long suma = 0;
+            while(i <= n) {
+                suma += i;
+                i +=2;
+            }
+            return suma;
+        }
+        else{
+            int i = 1; 
+            long suma = 0;
+            while(i <= n) {
+                suma += i;
+                i +=2;
+            }
+            return suma;
+
+        }
+    }
 
     public static void main(String[] args) {
         System.out.println(isPrime(11));
+        System.out.println(sumatoria(6));
+        
     }
 
 }
