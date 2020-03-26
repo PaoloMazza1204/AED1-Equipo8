@@ -2,7 +2,7 @@ package TA1;
 
 // Ejercicio 1
 public class PruebaAtributos {
-    /*public String atributo1 = "";
+    /*public String atributo1 = ""; // No hay error
     public int atributo2 = ""; // Mal: No se puede convertir de String a int
     public String atributo3 = 4; // Mal: No se puede convertir de int a String
     public float atributo4 = ""; // Mal: No se puede convertir de String a float
@@ -63,7 +63,7 @@ class PrePostDemo {
         int i = 3; // asignación i vale 3
         i++; // incremento en 1
         System.out.println(i); // se imprime por pantalla "4"
-        ++i;
+        ++i; // incremento en 1
         System.out.println(i); // se imprime por pantalla "5"
         System.out.println(++i); // se incrementa el valor y se imprime por pantalla "6"
         System.out.println(i++); // se imprime por pantalla "6" y luego se incrementa el valor
@@ -76,7 +76,7 @@ class PrePostDemo {
 1. aValue = 8933.234; (b)
 2. aValue++; (a)
 3. System.out.println("Hello World!"); (d)
-4. Bicycle myBike = new Bicycle(); (c)
+4. Bicycle myBike = new Bicycle(); (c) y (b)
 
 
 a) Incremento
@@ -92,7 +92,7 @@ Parte a) "second string"
          "third string"
 
 parte b) Flujo: Se entra al primer if (ya que 3 >= 0), luego se entra al else (porque 3 != 0), dentro del else se ejecuta
-la sentencia que imprime "second string en pantalla", luego se continua con el bloque del primer if, ejecutando la 
+la sentencia que imprime "second string en pantalla", luego se continúa con el bloque del primer if, ejecutando la 
 sentencia que imprime "third string" en pantalla.
 */
 class Ejercicio4 {
@@ -105,7 +105,7 @@ class Ejercicio4 {
             else {
                 System.out.println("second string");
             }
-        System.out.println("third string");
+            System.out.println("third string");
         }
     }
 }
