@@ -3,7 +3,7 @@ package TA2;
 public class UtilMath {
 
     // Ejercicio 1
-    public static int factorial(int num) {
+    public static int factorial(int num) {               // Subequipo B: No se proponen cambios.
         int resultado = 1;
         for(; num > 1; num--) { 
             resultado *= num;
@@ -14,7 +14,7 @@ public class UtilMath {
     // Ejercicio 2
 
     // Subrutina de public static long sumatoria(long n)
-    public static boolean isPrime(long n) {
+    public static boolean isPrime(long n) {              // Subequipo A: No se proponen cambios.
         boolean prime = true;
 
         int i = 3;
@@ -33,7 +33,7 @@ public class UtilMath {
         }
     }
 
-    public static long sumatoria(long n) {
+    public static long sumatoria(long n) {               // Subequipo A: No se proponen cambios tampoco.
         if(isPrime(n)) {
             int i = 0; 
             long suma = 0;
