@@ -1,0 +1,19 @@
+﻿Ejercicio 1:
+
+El método toma como parámetro un String y devuelve un int. En el proceso recorre la cadena y verifica si el caracter
+actual es un número o una letra. Si lo es, una variable booleana (inicializada como False), cambia a True. Mientras
+el bool sea True, la cadena sigue recorriendo. Si al llegar a un espacio, el bool está en True, al contador se le suma 1,
+y el bool se vuelve a cambiar a False. La cadena se sigue recorriendo y al llegar al final, si el bool está en True se le
+suma 1 al contador, sino simplemente devuelve el contador.
+
+
+Ejercicio2:
+
+obtenerLíneas:
+Empezamos abriendo el archivo, luego recorremos todas las líneas de éste, aumentando un contador que almacena la cantidad
+de líneas, luego recorremos de nuevo el archivo copiando las líneas a un array de strings que retornamos al final del 
+método. 
+
+cantPalabras:
+recorremos el array parámetro y a cada índice del array le aplicamos el método contarPalabras. Vamos almacenando en una
+variable que retornamos al final el número de palabras.
