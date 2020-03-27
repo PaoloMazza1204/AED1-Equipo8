@@ -7,7 +7,16 @@ y el bool se vuelve a cambiar a False. La cadena se sigue recorriendo y al llega
 suma 1 al contador, sino simplemente devuelve el contador.
 
 
-Ejercicio2:
+Ejercicio 2:
+
+Subequipo A:
+
+Vamos recorriendo por caracter el String parámetro, preguntamos si el caracter es una letra, si lo es, preguntamos si es
+una vocal, de serlo, aumentamos el contador de vocales en uno, de no serlo, aumentamos el contador de consonantes en uno, 
+devolvemos un string que indique cuantas vocales y consonantes hay en la cadena.
+
+
+Ejercicio 3:
 
 obtenerLineas:
 Empezamos abriendo el archivo, luego recorremos todas las líneas de éste, aumentando un contador que almacena la cantidad

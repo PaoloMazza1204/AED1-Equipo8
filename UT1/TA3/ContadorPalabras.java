@@ -67,6 +67,23 @@ public class ContadorPalabras {
         }
         return total;
     }
+
+    public String vocalesYConsonantes(String cadena) {
+        String vocales_ = "aeiou";
+        int vocales = 0;
+        int consonantes = 0;
+        for(char ch : cadena.toCharArray()) {
+            if(Character.isLetter(ch)) {
+                if(vocales_.contains(ch + "")) {
+                    vocales += 1;
+                }
+                else {
+                    consonantes += 1;
+                }
+            }
+        }
+        return "Vocales encontradas: " + vocales + "\nConsonantes encontradas: " + consonantes;
+    }
 }
 
 class Principal {
@@ -74,7 +91,8 @@ class Principal {
         // Inicializamos un objeto ContadorPalabras
         ContadorPalabras contador = new ContadorPalabras();
 
-        // Parte 1
+        // Ejercicio 1
+        System.out.println("Ejercicio 1:");
         System.out.println(contador.contarPalabras("Hola, esto es una    prueba. ")); // 5
         System.out.println(contador.contarPalabras("Hola. Esto esunaprueba.")); // 3
         System.out.println(contador.contarPalabras("")); // 0
@@ -83,9 +101,18 @@ class Principal {
         System.out.println(contador.contarPalabras("1")); // 1
         System.out.println(contador.contarPalabras("H")); // 1
 
-        // Parte 2
 
-        // Parte 3
+        // Ejercicio 2
+        System.out.println("Ejercicio 2:");
+        
+        // Subequipo A
+        System.out.println("\tParte A:");
+        String cadena = "Hola, esto es una prueba";
+        System.out.println(contador.vocalesYConsonantes(cadena));
+
+        System.out.println("\tParte B:"); // Su código
+        // Ejercicio 3
+        System.out.println("Ejercicio 3:");
         String[] lineas = contador.obtenerLineas("UT1/TA3/UT2_TA1_ARCHIVO_EJEMPLO.txt");
         int cantPalabras = contador.cantPalabras(lineas);
         System.out.println("Cantidad de Palabras: " + cantPalabras);
