@@ -9,7 +9,7 @@ suma 1 al contador, sino simplemente devuelve el contador.
 
 Ejercicio2:
 
-obtenerLíneas:
+obtenerLineas:
 Empezamos abriendo el archivo, luego recorremos todas las líneas de éste, aumentando un contador que almacena la cantidad
 de líneas, luego recorremos de nuevo el archivo copiando las líneas a un array de strings que retornamos al final del 
 método. 
