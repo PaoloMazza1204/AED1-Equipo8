@@ -84,6 +84,32 @@ public class ContadorPalabras {
         }
         return "Vocales encontradas: " + vocales + "\nConsonantes encontradas: " + consonantes;
     }
+
+
+    public int contarPalabrasLargoX (String frase, byte x) {
+        boolean palabra = false;
+        int contador = 0;
+        int palabrasLargoX = 0 ;
+        
+        for(char ch : frase.toCharArray()) {
+            if(Character.isDigit(ch) || Character.isLetter(ch)) {
+                palabra = true;
+                contador +=1;
+            }
+            else if(ch == ' ' && palabra == true) {
+               if (contador > x ) {
+                palabrasLargoX +=1;
+               }
+                palabra = false;
+                contador =0;
+            }
+        }
+        if(contador > x) {
+            return palabrasLargoX +=1;
+        }
+        return palabrasLargoX;
+    }
+
 }
 
 class Principal {
@@ -110,7 +136,12 @@ class Principal {
         String cadena = "Hola, esto es una prueba";
         System.out.println(contador.vocalesYConsonantes(cadena));
 
-        System.out.println("\tParte B:"); // Su código
+        // Subequipo B
+        System.out.println("\tParte B:");
+        String cadenab = "Hola, esto es una prueba";
+        byte x = 3 ;
+        System.out.println(contador.contarPalabrasLargoX(cadenab, x));
+      
         // Ejercicio 3
         System.out.println("Ejercicio 3:");
         String[] lineas = contador.obtenerLineas("UT1/TA3/UT2_TA1_ARCHIVO_EJEMPLO.txt");
