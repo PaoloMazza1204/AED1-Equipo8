@@ -114,7 +114,6 @@ public class ContadorPalabras {
      * @param byte x Cantidad de caracteres.
      * @return int cantidad de palabras con largo mayor a x.
      */
-
     public int contarPalabrasLargoX (String frase, byte x) {
         boolean palabra = false;
         int contador = 0;
@@ -155,6 +154,12 @@ public class ContadorPalabras {
         return resultado;
     }
 
+    /**
+     * Retorna las palabras comunes entre dor arrays de cadenas.
+     * @param palabras1 Primer array con palabras.
+     * @param palabras2 Segundo array con palabras
+     * @return Array con palabras en común.
+     */
     public String[] palabrasComunes(String[] palabras1, String[] palabras2) {
         String[] resultado = new String[palabras1.length];
         int i = 0;
