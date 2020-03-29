@@ -147,7 +147,7 @@ public class ContadorPalabras {
     public boolean contains(String[] array, String v) {
         boolean resultado = false;
         for(String str : array){
-            if(str == v) {
+            if(str != null && v.toLowerCase().equals(str.toLowerCase())) {
                 resultado = true;
                 break;
             }
@@ -200,44 +200,33 @@ class Principal {
       
         // // Ejercicio 3.
         // System.out.println("Ejercicio 3:");
-        String[] lineas = contador.obtenerLineas("TA3/UT2_TA1_ARCHIVO_EJEMPLO.txt");
+        String[] lineas = contador.obtenerLineas("UT1/TA3/UT2_TA1_ARCHIVO_EJEMPLO.txt");
         // int cantPalabras = contador.cantPalabras(lineas);
         // System.out.println("Cantidad de Palabras: " + cantPalabras);
 
         // TA4 Ejercicio 1.
-        //String[] ar1 = {"Hola", "mundo", "de", "los", "algoritmos"};
-        //String[] ar2 = {"Hola", "mundo", "de", "la", "informática"};
-        //String[] resultado = contador.palabrasComunes(ar1, ar2);
-        //for(String str : resultado) {
-          //  if (str != null) {
-            //    System.out.println(str);
-           // }
-        //}
-        // TA4 Ejercicio 1 parte c
+        System.out.println("TA4: Ejercicio 1:");
+        String[] ar1 = {"Hola", "mundo", "de", "los", "algoritmos"};
+        String[] ar2 = {"Hola", "mundo", "de", "la", "informática"};
+        String[] resultado = contador.palabrasComunes(ar1, ar2);
+        for(String str : resultado) {
+            if (str != null) {
+                System.out.println(str);
+            }
+        }
+        // TA4 Ejercicio 1 parte c.
         Random rand = new Random();
         int max = lineas.length - 1;
-        int rand1 = rand.nextInt(max);
-        int rand2 = rand.nextInt(max);
-        String[] linea1 = new String[contador.contarPalabras(lineas[rand1])];
-        String[] linea2 = new String[contador.contarPalabras(lineas[rand2])];
-        linea1 = lineas[rand1].split(" ");
-        linea2 = lineas[rand2].split(" ");
-        for(String str : linea1) {
-            if(true) {
-                System.out.println(str);
-            }
-        }
-        for(String str : linea2) {
-            if(true) {
-                System.out.println(str);
-            }
-        }
-
-        System.out.println(lineas[rand1]);
-        System.out.println(lineas[rand2]);
-        // String[] arr3 = ;
-        for(String str : contador.palabrasComunes(linea1, linea2)) {
-            if(true) {
+        String linea1 = lineas[rand.nextInt(max)];
+        String linea2 = lineas[rand.nextInt(max)];
+        System.out.println("Línea 1: " + linea1);
+        System.out.println("Línea 2: " + linea2);
+        String[] array1 = linea1.split(" ");
+        String[] array2 = linea2.split(" ");
+        String[] comunes = contador.palabrasComunes(array1, array2);
+        System.out.println("Coincidencias:");
+        for (String str : comunes) {
+            if(str != null) {
                 System.out.println(str);
             }
         }
