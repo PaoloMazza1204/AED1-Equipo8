@@ -1,0 +1,4 @@
+La función toma dos Arrays de Strings y devuelve uno diferente. Recorre uno de los Arrays que recibe y va viendo
+si el elemento está incluido en el otro Array. Si el elemento está en el otro Array entonces lo agrega a un tercer
+array de Strings, sino sigue recorriendo. Al terminar de recorrer, devuelve el Array de Strings donde fueron almacenados
+los strings que pertenecían a ambas entradas.

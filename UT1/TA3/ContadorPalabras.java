@@ -1,10 +1,14 @@
 package TA3;
 
+import java.util.Random;
 import java.io.*;
 
 public class ContadorPalabras {
-
-    //El algoritmo contarPalabras cuenta las palabras que contiene una cadena pasada por parámetro.    
+    /**
+     * Cuenta las palabras que contiene una cadena pasada por parámetro.
+     * @param frase cadena a contar sus palabras.
+     * @return cantidad de palabras en la cadena.
+     */
     public int contarPalabras(String frase) {
         boolean palabra = false;
         int contador = 0;
@@ -23,7 +27,14 @@ public class ContadorPalabras {
         }
         return contador;
     }
-
+    /**
+     * La funcion obtenerLineas abre y lee un archivo pasado por parametro. A medida que lo lee cuenta la
+     * cantidad de lineas y los agrega a un contador para luego definir el largo de un String[] en el cual
+     * posteriormente se guardara el contenido del archivo.
+     * @param String path Archivo a recorrer.
+     * @return String r String con el contenido del archivo.
+     */
+    
     public String[] obtenerLineas(String path) {
         try {
             int cont = 0;
@@ -58,8 +69,12 @@ public class ContadorPalabras {
         return r;
     }
 
-    /* Se le pasa un array con líneas de un archivo de texto, a cada una de estas líneas se le aplica el método
-    contarPalabras y se almacena el resultado en la variable total, que se retorna al final*/
+    /**
+     * Recorre el array de cadenas y llama a contarPalabras para cada cadena, almacena en la variable total la cantidad
+     * de palabras en la cadena.
+     * @param lineasArchivo Array con líneas del archivo
+     * @return int cantidad de palabras en todo el array
+     */
     public int cantPalabras (String[] lineasArchivo) {
         int total = 0;
         for(int i = 0; i < lineasArchivo.length; i++) {
@@ -67,7 +82,12 @@ public class ContadorPalabras {
         }
         return total;
     }
-
+    /**
+     * La función vocalesYConsonantes toma una cadena, si es una cadena y si se encuentra en la varible vocales_
+     * le suma a la varible contador llamada consonante.
+     * @param String cadena
+     * @return int 
+     */
     public String vocalesYConsonantes(String cadena) {
         String vocales_ = "aeiou";
         int vocales = 0;
@@ -84,68 +104,142 @@ public class ContadorPalabras {
         }
         return "Vocales encontradas: " + vocales + "\nConsonantes encontradas: " + consonantes;
     }
-
+    /**
+     * La función contarPalabrasLargoX recorre la string pasada como parámetro letra a letra,
+     * contando las letras consecutivas y al encontrar un espacio válida si la palabra es superior
+     * al largo que se pasa por parámetro, si lo es se suma uno a la variaba palabrasLargoX,
+     * la cual después será retornada.
+     *
+     * @param String frase Frase a evaluar.
+     * @param byte x Cantidad de caracteres.
+     * @return int cantidad de palabras con largo mayor a x.
+     */
 
     public int contarPalabrasLargoX (String frase, byte x) {
         boolean palabra = false;
         int contador = 0;
-        int palabrasLargoX = 0 ;
+        int palabrasLargoX = 0;
         
         for(char ch : frase.toCharArray()) {
             if(Character.isDigit(ch) || Character.isLetter(ch)) {
                 palabra = true;
-                contador +=1;
+                contador += 1;
             }
             else if(ch == ' ' && palabra == true) {
-               if (contador > x ) {
-                palabrasLargoX +=1;
+               if(contador > x) {
+                palabrasLargoX += 1;
                }
                 palabra = false;
-                contador =0;
+                contador = 0;
             }
         }
         if(contador > x) {
-            return palabrasLargoX +=1;
+            return palabrasLargoX += 1;
         }
         return palabrasLargoX;
     }
+    /**
+     * La función contains recorre un String[] y verifica si el segundo parámetro está incluido en él.
+     * @param String[] array frase a evaluar.
+     * @param String v.
+     * @return boolean.
+     */
+    public boolean contains(String[] array, String v) {
+        boolean resultado = false;
+        for(String str : array){
+            if(str == v) {
+                resultado = true;
+                break;
+            }
+        }
+        return resultado;
+    }
 
+    public String[] palabrasComunes(String[] palabras1, String[] palabras2) {
+        String[] resultado = new String[palabras1.length];
+        int i = 0;
+        for(String str : palabras1) {
+            if(contains(palabras2, str) && !contains(resultado, str)){
+                resultado[i] = str;
+                i++;
+            }
+        }
+        return resultado;
+    }
 }
 
 class Principal {
     public static void main(String[] args) {
-        // Inicializamos un objeto ContadorPalabras
+        // Inicializamos un objeto ContadorPalabras.
         ContadorPalabras contador = new ContadorPalabras();
 
-        // Ejercicio 1
-        System.out.println("Ejercicio 1:");
-        System.out.println(contador.contarPalabras("Hola, esto es una    prueba. ")); // 5
-        System.out.println(contador.contarPalabras("Hola. Esto esunaprueba.")); // 3
-        System.out.println(contador.contarPalabras("")); // 0
-        System.out.println(contador.contarPalabras(" ")); // 0
-        System.out.println(contador.contarPalabras(".")); // 0
-        System.out.println(contador.contarPalabras("1")); // 1
-        System.out.println(contador.contarPalabras("H")); // 1
+        // // Ejercicio 1.
+        // System.out.println("Ejercicio 1:");
+        // System.out.println(contador.contarPalabras("Hola, esto es una    prueba. ")); // 5
+        // System.out.println(contador.contarPalabras("Hola. Esto esunaprueba.")); // 3
+        // System.out.println(contador.contarPalabras("")); // 0
+        // System.out.println(contador.contarPalabras(" ")); // 0
+        // System.out.println(contador.contarPalabras(".")); // 0
+        // System.out.println(contador.contarPalabras("1")); // 1
+        // System.out.println(contador.contarPalabras("H")); // 1
 
 
-        // Ejercicio 2
-        System.out.println("Ejercicio 2:");
+        // // Ejercicio 2.
+        // System.out.println("Ejercicio 2:");
         
-        // Subequipo A
-        System.out.println("\tParte A:");
-        String cadena = "Hola, esto es una prueba";
-        System.out.println(contador.vocalesYConsonantes(cadena));
+        // // Subequipo A.
+        // System.out.println("\tParte A:");
+        // String cadena = "Hola, esto es una prueba";
+        // System.out.println(contador.vocalesYConsonantes(cadena));
 
-        // Subequipo B
-        System.out.println("\tParte B:");
-        String cadenab = "Hola, esto es una prueba";
-        byte x = 3 ;
-        System.out.println(contador.contarPalabrasLargoX(cadenab, x));
+        // // Subequipo B.
+        // System.out.println("\tParte B:");
+        // String cadenab = "Hola, esto es una prueba";
+        // byte x = 3 ;
+        // System.out.println(contador.contarPalabrasLargoX(cadenab, x));
       
-        // Ejercicio 3
-        System.out.println("Ejercicio 3:");
-        String[] lineas = contador.obtenerLineas("UT1/TA3/UT2_TA1_ARCHIVO_EJEMPLO.txt");
-        int cantPalabras = contador.cantPalabras(lineas);
-        System.out.println("Cantidad de Palabras: " + cantPalabras);
+        // // Ejercicio 3.
+        // System.out.println("Ejercicio 3:");
+        String[] lineas = contador.obtenerLineas("TA3/UT2_TA1_ARCHIVO_EJEMPLO.txt");
+        // int cantPalabras = contador.cantPalabras(lineas);
+        // System.out.println("Cantidad de Palabras: " + cantPalabras);
+
+        // TA4 Ejercicio 1.
+        //String[] ar1 = {"Hola", "mundo", "de", "los", "algoritmos"};
+        //String[] ar2 = {"Hola", "mundo", "de", "la", "informática"};
+        //String[] resultado = contador.palabrasComunes(ar1, ar2);
+        //for(String str : resultado) {
+          //  if (str != null) {
+            //    System.out.println(str);
+           // }
+        //}
+        // TA4 Ejercicio 1 parte c
+        Random rand = new Random();
+        int max = lineas.length - 1;
+        int rand1 = rand.nextInt(max);
+        int rand2 = rand.nextInt(max);
+        String[] linea1 = new String[contador.contarPalabras(lineas[rand1])];
+        String[] linea2 = new String[contador.contarPalabras(lineas[rand2])];
+        linea1 = lineas[rand1].split(" ");
+        linea2 = lineas[rand2].split(" ");
+        for(String str : linea1) {
+            if(true) {
+                System.out.println(str);
+            }
+        }
+        for(String str : linea2) {
+            if(true) {
+                System.out.println(str);
+            }
+        }
+
+        System.out.println(lineas[rand1]);
+        System.out.println(lineas[rand2]);
+        // String[] arr3 = ;
+        for(String str : contador.palabrasComunes(linea1, linea2)) {
+            if(true) {
+                System.out.println(str);
+            }
+        }
     }
 }

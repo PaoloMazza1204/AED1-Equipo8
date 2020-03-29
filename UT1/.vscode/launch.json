@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ArithmeticDemo<UT1_37c2db49>",
+            "request": "launch",
+            "mainClass": "TA1.ArithmeticDemo",
+            "projectName": "UT1_37c2db49"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Ejercicio4<UT1_37c2db49>",
+            "request": "launch",
+            "mainClass": "TA1.Ejercicio4",
+            "projectName": "UT1_37c2db49"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PrePostDemo<UT1_37c2db49>",
+            "request": "launch",
+            "mainClass": "TA1.PrePostDemo",
+            "projectName": "UT1_37c2db49"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PruebaAtributos<UT1_37c2db49>",
+            "request": "launch",
+            "mainClass": "TA1.PruebaAtributos",
+            "projectName": "UT1_37c2db49"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-UtilMath<UT1_37c2db49>",
+            "request": "launch",
+            "mainClass": "TA2.UtilMath",
+            "projectName": "UT1_37c2db49"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Principal<UT1_37c2db49>",
+            "request": "launch",
+            "mainClass": "TA3.Principal",
+            "projectName": "UT1_37c2db49"
+        }
+    ]
+}

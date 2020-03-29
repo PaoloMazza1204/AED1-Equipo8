@@ -15,6 +15,10 @@ Vamos recorriendo por caracter el String parámetro, preguntamos si el caracter 
 una vocal, de serlo, aumentamos el contador de vocales en uno, de no serlo, aumentamos el contador de consonantes en uno, 
 devolvemos un string que indique cuantas vocales y consonantes hay en la cadena.
 
+Subequipo B:
+
+Vamos recorriendo la cadena análogamente al ejercicio 1 y al encontrar una palabra preguntamos si el largo de la misma es 
+mayor a el parámetro x, si lo es, sumamos uno a la variable que almacena las palabras con largo mayor a x, al final la retornamos.
 
 Ejercicio 3:
 
