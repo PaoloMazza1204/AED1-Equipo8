@@ -2,8 +2,12 @@ Pregunta 1:
 
 ¿Cuál es el costo de memoria en cada caso? (usando arrays o listas encadenadas)
 
-Serían 128 bytes para el caso de usar arrays, en el caso de las listas encadenadas, no sabemos exactamente el costo de 
-memoria, pero sí sabemos que se ocuparía una mayor cantidad de memoria debido a los enlaces entre los nodos.
+Para calcular el peso del objeto producto, sumamos 80 bytes por los 2 Strings, 40 + 60 por los caracteres de los Strings,
+4 por el punto flotante, 16 por la creación del objeto, todo esto multiplicado por la cantidad de productos. Luego, si se
+va a utilizar un array sumamos 32 por el array, 4 por el índice int y 16 por la creación del objeto lista. Dando un total de
+52 bytes por la lista, más 200 bytes multiplicado por la cantidad de objetos producto. Por el otro lado, si se va a utilizar
+una lista encadenada, no sabemos exactamente cuantos bytes utilizaremos, pero si sabremos que se utilizarán más debido a las
+referencias entre los nodos de la lista.
 
 
 Pregunta 2: 
