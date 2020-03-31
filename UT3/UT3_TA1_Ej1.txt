@@ -1,0 +1,32 @@
+Pregunta 1:
+
+¿Cuál es el costo de memoria en cada caso? (usando arrays o listas encadenadas)
+
+Serían 128 bytes para el caso de usar arrays, en el caso de las listas encadenadas, no sabemos exactamente el costo de 
+memoria, pero sí sabemos que se ocuparía una mayor cantidad de memoria debido a los enlaces entre los nodos.
+
+
+Pregunta 2: 
+
+¿Cuáles son las consideraciones que tu Equipo haría referentes a la cantidad de productos que soporta cada tipo de estructura?
+
+La consideración más importante que haríamos sería preguntarnos sobre la cantidad de elementos que tendría que almacenar la
+aplicación real, en otras palabras, si se trata de un hipermercado o de un almacén de barrio. Esto porque la decisión que vayamos
+a tomar dependerá de la cantidad y el tipo de operaciones que se tengan que realizar.
+
+
+Pregunta 3:
+
+Eficiencia de las operaciones dependiendo de cada implementación? (argumentar)
+
+a) incorporar un nuevo producto: Mejor lista que array, ya que la estructura de la lista nos permite realizar inserciones más
+eficientemente a comparación del array.
+
+b) Agregar stock a un producto existente: Esto dependerá de si conocemos la posición del producto en la estructura, es decir, si
+tenemos un array y sabemos que el producto se encuentra en cierto índice, simplemente haríamos array[índice] += incremento, en este
+caso en particular sería mejor un array que lista. De no conocer la posición del producto, sería indiferente usar un array o lista.
+
+c) Reducir el stock de un producto existente: Análogo a b).
+
+d) Listar todos los productos registrados: Sería indiferente usar un array o lista en este caso, pues lo único que habría que hacer es
+recorrer la estructura e ir informando los productos.
