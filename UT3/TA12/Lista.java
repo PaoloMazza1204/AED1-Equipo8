@@ -101,6 +101,24 @@ public class Lista<T> implements ILista<T> {
         return false;
     }
 
+    public Nodo<T> quitarUltimo() {
+        if (primero == null) {
+            return null;
+        }
+        if (primero.getSiguiente() == null) {
+            Nodo<T> elim = primero;
+            primero = null;
+            return elim;
+        }
+        Nodo<T> aux = primero;
+        while (aux.getSiguiente().getSiguiente() != null) {
+            aux = aux.getSiguiente();
+        }
+        Nodo<T> ultimo = aux.getSiguiente();
+        aux.setSiguiente(null);
+        return ultimo;
+    }
+
     @Override
     public String imprimir() {
         String aux = "";
