@@ -1,7 +1,7 @@
 package UT3.TA12;
 
 
-public class Cola<T> {
+public class Cola<T> implements ICola<T> {
 
     private Lista<T> lista;
 
