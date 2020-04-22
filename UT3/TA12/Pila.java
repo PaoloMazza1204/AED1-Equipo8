@@ -1,6 +1,6 @@
 package UT3.TA12;
 
-public class Pila<T> {
+public class Pila<T> implements IPila<T>{
 
     private Lista<T> lista;
 
